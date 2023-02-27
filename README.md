@@ -7,7 +7,7 @@ This is repository for my final project titled "Development for Prototype of Man
 - 3: Up
 
 ## Electronics Parts
-- Arduino Uno R3
+- Arduino Uno R3:
 [I bought here!](https://www.tokopedia.com/riz-umi/arduino-uno-r3-board-original-made-in-italy/)
-- Dynamixel Shield
+- Dynamixel Shield:
 [I bought here!](https://www.tokopedia.com/digiware/dynamixel-shield/)
