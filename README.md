@@ -12,11 +12,13 @@ This is repository for my final project titled "Development for Prototype of Man
 
 
 ## Electronics Parts
-- Arduino Uno R3: I bought
-[here!](https://www.tokopedia.com/riz-umi/arduino-uno-r3-board-original-made-in-italy/)
-- Dynamixel Shield: I bought
-[here!](https://www.tokopedia.com/digiware/dynamixel-shield/)
-- USB Communication Converter U2D2: I bought
-[here!](https://www.tokopedia.com/digiware/usb-communication-converter-u2d2)
-- USB to TTL: I bought
-[here!](https://www.tokopedia.com/dx-tronics/ft232-usb-to-ttl-serial-3-3v-5v-ftdi-ft232rl)
+- [Arduino Uno R3](https://www.tokopedia.com/riz-umi/arduino-uno-r3-board-original-made-in-italy/)
+- [Dynamixel Shiel](https://www.tokopedia.com/digiware/dynamixel-shield/)
+- [USB Communication Converter U2D2](https://www.tokopedia.com/digiware/usb-communication-converter-u2d2)
+- [USB to TTL](https://www.tokopedia.com/dx-tronics/ft232-usb-to-ttl-serial-3-3v-5v-ftdi-ft232rl)
+
+## Software Used in this Project
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- Autodesk Inventor Professional 2023
+- [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+- [Roboplus R+ Task 3.0](https://emanual.robotis.com/docs/en/software/rplustask3/)
