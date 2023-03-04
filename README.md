@@ -8,8 +8,7 @@ This is repository for my final project titled "Development for Prototype of Man
 - 4: MG996R
 - 5: SG90
 
-![Servo Structure](https://github.com/vkurpmax/ICCS_Conveyor/blob/main/NodeMCU%20ESP8266/ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.webp?raw=true)
-README.md materials\Servo Structure.jpg
+![Servo Structure](https://github.com/vkurpmax/Manipulator-Robot/blob/main/README.md%20materials/Servo%20Structure.jpg)
 
 
 ## Electronics Parts
