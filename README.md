@@ -16,3 +16,7 @@ This is repository for my final project titled "Development for Prototype of Man
 [here!](https://www.tokopedia.com/riz-umi/arduino-uno-r3-board-original-made-in-italy/)
 - Dynamixel Shield: I bought
 [here!](https://www.tokopedia.com/digiware/dynamixel-shield/)
+- USB Communication Converter U2D2: I bought
+[here!](https://www.tokopedia.com/digiware/usb-communication-converter-u2d2)
+- USB to TTL: I bought
+[here!](https://www.tokopedia.com/dx-tronics/ft232-usb-to-ttl-serial-3-3v-5v-ftdi-ft232rl)
