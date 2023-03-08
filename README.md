@@ -1,5 +1,7 @@
 # Manipulator-Robot
-This is repository for my final project titled "Development for Prototype of Manipulator Robot and Monitoring System based on Deep Learning"
+This is repository for my final project titled "Development for Prototype of Manipulator Robot and Monitoring System based on Deep Learning".
+
+This repository is still on progress.
 
 ## Servo Structure
 - 1: Dynamixel AX-12A (ID: )
@@ -22,3 +24,20 @@ This is repository for my final project titled "Development for Prototype of Man
 - Autodesk Inventor Professional 2023
 - [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 - [Roboplus R+ Task 3.0](https://emanual.robotis.com/docs/en/software/rplustask3/)
+
+## Prerequisites
+1. Inverse Kinematics
+
+## Basic to Learn
+- CNN
+- Decision Tree
+- SVM
+- RBF (Radial Basis Function) / Gausian RBF
+- Q Learn Algorithm
+- Fuzzy
+- ROS
+- Solidworks
+- Inventor
+- Deep Reinforcement Learning
+- Deep Neural Network (DNN)
+- Inverse Dynamics
