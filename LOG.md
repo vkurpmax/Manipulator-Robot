@@ -22,4 +22,4 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 - I did scanning the dynamixel first to know baudrate, protocol, and ID using U2D2 and software Dynamixel Wizard 2.0.
 
 ## 20230306
-- I bought 4 pin connectors and assembled it to 4 pin jumper wires. So it will be female jumper wires to female connector. I will use it for my UART (from U2D2/Dynamixel Shield) to USB TTL.
+- I made Grove 4 Pin. I bought 4 pin connectors and assembled it to 4 pin jumper wires. So it will be female jumper wires to female connector. I will use it for my UART (from U2D2/Dynamixel Shield) to USB TTL.
