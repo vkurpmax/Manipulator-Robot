@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 # Manipulator-Robot
 This is repository for my final project titled "Development for Prototype of Manipulator Robot and Monitoring System based on Deep Learning".
 
@@ -10,7 +12,7 @@ This repository is still on progress.
 - 4: MG996R
 - 5: SG90
 
-![Servo Structure](https://github.com/vkurpmax/Manipulator-Robot/blob/main/README.md%20materials/Servo%20Structure.jpg)
+![Servo Structure](https://github.com/vkurpmax/Manipulator-Robot/blob/main/README.md%20materials/Servo%20Structure.jpg?raw=true)
 
 
 ## Electronics Parts
@@ -24,9 +26,11 @@ This repository is still on progress.
 - Autodesk Inventor Professional 2023
 - [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 - [Roboplus R+ Task 3.0](https://emanual.robotis.com/docs/en/software/rplustask3/)
+- [Matlab]()
 
 ## Prerequisites
 1. Inverse Kinematics
+2. Denavit Hartenberg Method
 
 ## Basic to Learn
 - CNN
@@ -41,3 +45,5 @@ This repository is still on progress.
 - Deep Reinforcement Learning
 - Deep Neural Network (DNN)
 - Inverse Dynamics
+- Unified Robot Description Format URDF and DH parameters
+- Matlab Robotics
