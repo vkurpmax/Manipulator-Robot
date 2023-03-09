@@ -9,8 +9,8 @@ This repository is still on progress.
 - 1: Dynamixel AX-12A (ID: )
 - 2: Dynamixel AX-12A (ID: )
 - 3: Dynamixel AX-12A (ID: )
-- 4: MG996R
-- 5: SG90
+- 4: Tower Pro MG996R
+- 5: Tower Pro SG90
 
 ![Servo Structure](https://github.com/vkurpmax/Manipulator-Robot/blob/main/README.md%20materials/Servo%20Structure.jpg?raw=true)
 
@@ -29,7 +29,7 @@ This repository is still on progress.
 - [Matlab]()
 
 ## Prerequisites
-1. Inverse Kinematics
+1. [Inverse Kinematics](https://github.com/vkurpmax/Manipulator-Robot/blob/main/Inverse_Kinematics.md)
 2. Denavit Hartenberg Method
 
 ## Basic to Learn

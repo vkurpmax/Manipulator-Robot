@@ -1,5 +1,5 @@
 # Manipulator-Robot
-Log of what I did everyday
+Log of what I did step by step
 
 ## 20230226
 No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm frustrated.
@@ -23,3 +23,9 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 
 ## 20230306
 - I made Grove 4 Pin. I bought 4 pin connectors and assembled it to 4 pin jumper wires. So it will be female jumper wires to female connector. I will use it for my UART (from U2D2/Dynamixel Shield) to USB TTL.
+
+## 20230308
+- I contruct a learning path
+
+## 20230309
+- I learn [Inverse Kinematics](https://github.com/vkurpmax/Manipulator-Robot/blob/main/Inverse_Kinematics.md)
