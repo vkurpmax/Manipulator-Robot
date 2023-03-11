@@ -34,6 +34,9 @@ Protocol version: 1.0
 - [USB Communication Converter U2D2](https://www.tokopedia.com/digiware/usb-communication-converter-u2d2)
 - [USB to TTL](https://www.tokopedia.com/dx-tronics/ft232-usb-to-ttl-serial-3-3v-5v-ftdi-ft232rl)
 
+## Datasheet / Manual
+- [U2D2 Power Hub](https://emanual.robotis.com/docs/en/parts/interface/u2d2_power_hub/)
+
 ## Software Used in this Project
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - Autodesk Inventor Professional 2023
