@@ -7,9 +7,7 @@ This repository is still on progress.
 
 ## Servo Structure
 - 1: Dynamixel AX-12A  
-ID:  
-Baud rate: 1 Mbps  
-Protocol version: 1.0
+(ID: | Baud rate: 1 Mbps | Protocol version: 1.0)
 
 - 2: Dynamixel AX-12A  
 (ID: | Baud rate: 1 Mbps | Protocol version: 1.0)
