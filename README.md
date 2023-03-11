@@ -13,7 +13,7 @@ This repository is still on progress.
 (ID: | Baud rate: 1 Mbps | Protocol version: 1.0)
 
 - 3: Dynamixel AX-12A  
-(ID: | Baud rate: 1 Mbps | Protocol version: 1.0)
+(ID: 003 | Baud rate: 1 Mbps | Protocol version: 1.0)
 
 - 4: Tower Pro MG996R
 
@@ -34,6 +34,7 @@ This repository is still on progress.
 - [U2D2 Power Hub](https://www.tokopedia.com/digiware/u2d2-power-hub-board-phb-set)
 
 ## Datasheet / Manual
+- [Dynamixel AX-12A](https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/)
 - [U2D2](https://emanual.robotis.com/docs/en/parts/interface/u2d2/)
 - [U2D2 Power Hub](https://emanual.robotis.com/docs/en/parts/interface/u2d2_power_hub/)
 
