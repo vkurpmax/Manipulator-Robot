@@ -8,4 +8,4 @@ Configuring the joint positions of a robot using forward or inverse kinematics
 Source: ([Mathworks](https://www.mathworks.com/discovery/inverse-kinematics.html#:~:text=Inverse%20kinematics%20is%20the%20use,between%20bins%20and%20manufacturing%20machines), Year Unknown)
 
 ## References:
-Mathworks. Year Unknown. Inverse kinematics (IK) algorithm design with MATLAB and Simulink. (_Online_). (https://www.mathworks.com/discovery/inverse-kinematics.html#:~:text=Inverse%20kinematics%20is%20the%20use,between%20bins%20and%20manufacturing%20machines.), Accessed 8th March 2023.
+1. Mathworks. Year Unknown. Inverse kinematics (IK) algorithm design with MATLAB and Simulink. (_Online_). (https://www.mathworks.com/discovery/inverse-kinematics.html#:~:text=Inverse%20kinematics%20is%20the%20use,between%20bins%20and%20manufacturing%20machines.), Accessed 8th March 2023.
