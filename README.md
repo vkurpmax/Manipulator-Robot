@@ -24,7 +24,9 @@ This repository is still on progress.
 ## Link Structure
 - Link 1: 85 mm
 - Link 2: 165 mm
-- Link 3: 155 mm
+- Link 3: 155 mm  
+
+![Link Structure](https://github.com/vkurpmax/Manipulator-Robot/blob/main/README.md%20materials/Link%20Structure.jpg?raw=true)
 
 ## Electronics Parts
 - [Arduino Uno R3](https://www.tokopedia.com/riz-umi/arduino-uno-r3-board-original-made-in-italy/)
