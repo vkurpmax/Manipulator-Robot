@@ -29,3 +29,15 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 
 ## 20230309
 - I learn [Inverse Kinematics](https://github.com/vkurpmax/Manipulator-Robot/blob/main/Inverse_Kinematics.md)
+
+## 20230311
+- Dissamble the robot. Learn the mechanism of mechanical parts.
+
+## 20230312
+- Recover and update firmware using Dynamixel Wizard.
+- Set IDs for Dynamixel
+
+## 20230313
+- Assemble the dynamixel again.
+- Learn Inverse Kinematic from [here](https://opentextbooks.clemson.edu/wangrobotics/chapter/inverse-kinematics/).
+

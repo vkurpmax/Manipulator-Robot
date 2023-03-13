@@ -6,18 +6,18 @@ This is repository for my final project titled "Development for Prototype of Man
 This repository is still on progress.
 
 ## Servo Structure
-- 1: Dynamixel AX-12A  
+- Servo 1: Dynamixel AX-12A  
 (ID: 001 | Baud rate: 1 Mbps | Protocol version: 1.0)
 
-- 2: Dynamixel AX-12A  
+- Servo 2: Dynamixel AX-12A  
 (ID: 002 | Baud rate: 1 Mbps | Protocol version: 1.0)
 
-- 3: Dynamixel AX-12A  
+- Servo 3: Dynamixel AX-12A  
 (ID: 003 | Baud rate: 1 Mbps | Protocol version: 1.0)
 
-- 4: Tower Pro MG996R
+- Servo 4: Tower Pro MG996R
 
-- 5: Tower Pro SG90
+- Servo 5: Tower Pro SG90
 
 ![Servo Structure](https://github.com/vkurpmax/Manipulator-Robot/blob/main/README.md%20materials/Servo%20Structure.jpg?raw=true)
 
@@ -54,15 +54,17 @@ This repository is still on progress.
 ## Basic to Learn
 - CNN
 - Decision Tree
-- SVM
-- RBF (Radial Basis Function) / Gausian RBF
-- Q Learn Algorithm
+- Deep Neural Network (DNN)
+- Deep Reinforcement Learning
 - Fuzzy
+- Homogenous Matrix
+- Inventor
+- Inverse Dynamics
+- Kinematic Decoupling
+- Matlab Robotics
+- Q Learn Algorithm
+- RBF (Radial Basis Function) / Gausian RBF
 - ROS
 - Solidworks
-- Inventor
-- Deep Reinforcement Learning
-- Deep Neural Network (DNN)
-- Inverse Dynamics
+- SVM
 - Unified Robot Description Format URDF and DH parameters
-- Matlab Robotics
