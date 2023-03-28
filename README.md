@@ -37,6 +37,7 @@ This repository is still on progress.
 
 ## Datasheet / Manual
 - [Dynamixel AX-12A](https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/)
+- [Dynamixel Protocol 1.0](https://emanual.robotis.com/docs/en/dxl/protocol1/)
 - [Dynamixel Shield](https://emanual.robotis.com/docs/en/parts/interface/dynamixel_shield/)
 - [U2D2](https://emanual.robotis.com/docs/en/parts/interface/u2d2/)
 - [U2D2 Power Hub](https://emanual.robotis.com/docs/en/parts/interface/u2d2_power_hub/)
