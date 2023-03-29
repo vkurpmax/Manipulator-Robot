@@ -45,6 +45,14 @@ def main(motor_object):
               (motor_object.id, motor_object.get_present_position()))
         bool_test = user_input()
 
+print("\nPosition of dxl ID: %d is %d " %
+              (id, get_present_position()))
+# desired angle input
+input_pos = int(input("goal pos: "))
+set_goal_position(input_pos)
+print("Position of dxl ID: %d is now: %d " %
+      (id, get_present_position()))
+
 # pass in AX12 object
 main(my_dxl_1)
 main(my_dxl_2)
