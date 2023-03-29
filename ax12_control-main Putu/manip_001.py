@@ -19,8 +19,8 @@ my_dxl_3.set_moving_speed(200)
 
 # Range of each motor
 # 1: 500 - 800
-# 2: 
-# 3:
+# 2: 170 - 500
+# 3: 215 - 790
 
 def user_input():
     """Check to see if user wants to continue"""
@@ -46,8 +46,12 @@ def main(motor_object):
         bool_test = user_input()
 
 # pass in AX12 object
-main(my_dxl)
+main(my_dxl_1)
+main(my_dxl_2)
+main(my_dxl_3)
 
 # disconnect
-my_dxl.set_torque_enable(0)
+my_dxl_1.set_torque_enable(0)
+my_dxl_2.set_torque_enable(0)
+my_dxl_3.set_torque_enable(0)
 Ax12.disconnect()
