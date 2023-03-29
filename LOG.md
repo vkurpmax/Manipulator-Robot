@@ -41,3 +41,5 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 - Assemble the dynamixel again.
 - Learn Inverse Kinematic from [here](https://opentextbooks.clemson.edu/wangrobotics/chapter/inverse-kinematics/).
 
+## 20230328
+- I try to move dynamixel using python. It works in a simple way.
