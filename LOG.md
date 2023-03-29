@@ -43,3 +43,7 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 
 ## 20230328
 - I try to move dynamixel using python. It works in a simple way.
+
+## 20230329
+- Now I try to modify the code I found.
+- I try to move all dynamixel at once.
