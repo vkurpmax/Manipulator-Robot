@@ -56,3 +56,5 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 
 ## 20230401
 - I try to convert all code from last year project (in C++) to python for this project.
+- I use SSH to connect to Raspberry pi.
+- I use VNC to connect to Raspberry pi.
