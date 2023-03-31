@@ -47,3 +47,12 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 ## 20230329
 - Now I try to modify the code I found.
 - I try to move all dynamixel at once.
+
+## 20230330
+- I can move 3 dynamixel servos one by one.
+
+## 20230331
+- I am able to move 3 dynamixel servos simultanueosly.
+
+## 20230401
+- I try to convert all code from last year project (in C++) to python for this project.
