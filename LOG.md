@@ -58,3 +58,13 @@ No progress. Dynamixel shield doesn't make the servo moved a single degree. I'm 
 - I try to convert all code from last year project (in C++) to python for this project.
 - I use SSH to connect to Raspberry pi.
 - I use VNC to connect to Raspberry pi.
+- Installing RPi.GPIO library.   
+First, update the available package version:
+```
+sudo apt-get update
+```
+
+Then, install RPi.GPIO:
+```
+sudo apt-get install rpi.gpio
+```
