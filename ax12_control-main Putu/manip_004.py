@@ -2,6 +2,11 @@ from Ax12 import Ax12
 import RPi.GPIO as GPIO
 import time
 
+int START = 3
+
+# - - - - - - - - - - - - - - - - 
+# - - - - - GPIO SETUP  - - - - -
+# - - - - - - - - - - - - - - - -
 GPIO.setmode(GPIO.BOARD)
 
 # Servo_4 Setup
@@ -16,6 +21,10 @@ GPIO.setup(servo_5, GPIO.OUT)
 pwm = GPIO.PWM(servo_5, 50)
 pwm.start(0)
 
+
+# - - - - - - - - - - - - - - - - 
+# - - - - DYNAMIXEL SETUP - - - -
+# - - - - - - - - - - - - - - - -
 # e.g 'COM3' windows or '/dev/ttyUSB0' for Linux
 Ax12.DEVICENAME = '/dev/ttyUSB0'
 
@@ -32,6 +41,10 @@ my_dxl_1.set_moving_speed(150)
 my_dxl_2.set_moving_speed(150)
 my_dxl_3.set_moving_speed(150)
 
+
+# - - - - - - - - - - - - - - - - 
+# - - - - - - DEFINE  - - - - - -
+# - - - - - - - - - - - - - - - -
 def SetAngle_4(angle):
     duty = angle / 18 + 2
     GPIO.output(servo_4, True)
@@ -57,9 +70,17 @@ def user_input():
         return True
 
 def setup_2():
-    pinMode(START, INPUT);
+    GPIO.setup(START, GPIO.IN);
 
-# MAIN PROGRAM
+# - - - - - - - - - - - - - - - - 
+# - - - -  MAIN PROGRAM   - - - -
+# - - - - - - - - - - - - - - - -
+setup_2()
+Tunggu_Start:
+
+
+
+
 """ sets goal position based on user input """
 bool_test = True
 while bool_test:
