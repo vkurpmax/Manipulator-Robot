@@ -1,4 +1,20 @@
 from Ax12 import Ax12
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BOARD)
+
+# Servo_4 Setup
+servo_4 = 32
+GPIO.setup(servo_4, GPIO.OUT)
+pwm = GPIO.PWM(servo_4, 50)
+pwm.start(0)
+
+# Servo_5 Setup
+servo_5 = 33
+GPIO.setup(servo_5, GPIO.OUT)
+pwm = GPIO.PWM(servo_5, 50)
+pwm.start(0)
 
 # e.g 'COM3' windows or '/dev/ttyUSB0' for Linux
 Ax12.DEVICENAME = '/dev/ttyUSB0'
@@ -16,6 +32,21 @@ my_dxl_1.set_moving_speed(150)
 my_dxl_2.set_moving_speed(150)
 my_dxl_3.set_moving_speed(150)
 
+def SetAngle_4(angle):
+    duty = angle / 18 + 2
+    GPIO.output(servo_4, True)
+    pwm.ChangeDutyCycle(duty)
+    time.sleep(1)
+    GPIO.output(servo_4, False)
+    pwm.ChangeDutyCycle(0)
+
+def SetAngle_5(angle):
+    duty = angle / 18 + 2
+    GPIO.output(servo_5, True)
+    pwm.ChangeDutyCycle(duty)
+    time.sleep(1)
+    GPIO.output(servo_5, False)
+    pwm.ChangeDutyCycle(0)
 
 def user_input():
     """Check to see if user wants to continue"""
@@ -26,8 +57,6 @@ def user_input():
         return True
 
 def setup_2():
-    servo1.attach(5);   # Attach the servo on pin 5 to the servo object
-    servo2.attach(6);   # Attach the servo on pin 6 to the servo object
     pinMode(START, INPUT);
 
 # MAIN PROGRAM
@@ -61,3 +90,5 @@ my_dxl_1.set_torque_enable(0)
 my_dxl_2.set_torque_enable(0)
 my_dxl_3.set_torque_enable(0)
 Ax12.disconnect()
+
+GPIO.cleanup()

@@ -15,7 +15,8 @@ This repository is still on progress.
 - Servo 3: Dynamixel AX-12A  
 (ID: 003 | Baud rate: 1 Mbps | Protocol version: 1.0)
 
-- Servo 4: Tower Pro MG996R
+- Servo 4: Tower Pro MG996R   
+Angle Servo (PWM): 90 Degree
 
 - Servo 5: Tower Pro SG90
 

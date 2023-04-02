@@ -68,3 +68,7 @@ Then, install RPi.GPIO:
 ```
 sudo apt-get install rpi.gpio
 ```
+
+## 20230402
+- Just found that Servo 5 (Tower Pro SG90) is Dead
+- Created program to control servo 4 and 5
