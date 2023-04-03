@@ -7,13 +7,16 @@ This repository is still on progress.
 
 ## Servo Structure
 - Servo 1: Dynamixel AX-12A  
-(ID: 001 | Baud rate: 1 Mbps | Protocol version: 1.0)
+(ID: 001 | Baud rate: 1 Mbps | Protocol version: 1.0)   
+Range:
 
 - Servo 2: Dynamixel AX-12A  
-(ID: 002 | Baud rate: 1 Mbps | Protocol version: 1.0)
+(ID: 002 | Baud rate: 1 Mbps | Protocol version: 1.0)   
+Range:
 
 - Servo 3: Dynamixel AX-12A  
-(ID: 003 | Baud rate: 1 Mbps | Protocol version: 1.0)
+(ID: 003 | Baud rate: 1 Mbps | Protocol version: 1.0)   
+Range:
 
 - Servo 4: Tower Pro MG996R   
 Angle Servo (PWM): 90 Degree

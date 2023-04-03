@@ -2,7 +2,8 @@ from Ax12 import Ax12
 import RPi.GPIO as GPIO
 import time
 
-int START = 3
+START = 3
+b = 0
 
 # - - - - - - - - - - - - - - - - 
 # - - - - - GPIO SETUP  - - - - -
@@ -72,6 +73,22 @@ def user_input():
 def setup_2():
     GPIO.setup(START, GPIO.IN);
 
+def Tunggu_Start():
+    #if GPIO.input(3) == GPIO.HIGH:
+        my_dxl_2.set_goal_position(358)
+        my_dxl_3.set_goal_position(409)
+        my_dxl_1.set_goal_position(512)
+        
+        val1 = map(426, 0, 1023, 0, 180)
+        SetAngle_4(val1)
+        time.sleep(0.03)
+
+        val2 = map(0, 0, 1023, 0, 180)
+        SetAngle_5(val2)
+        time.sleep(0.015)
+        b = 1
+        
+
 # - - - - - - - - - - - - - - - - 
 # - - - -  MAIN PROGRAM   - - - -
 # - - - - - - - - - - - - - - - -
@@ -82,13 +99,13 @@ Tunggu_Start:
 
 
 """ sets goal position based on user input """
-bool_test = True
+bool_test = Truet_pr
 while bool_test:
 
     print("\nPosition of dxl ID: %d is %d " %
           (my_dxl_1.id, my_dxl_1.get_present_position()))
     print("\nPosition of dxl ID: %d is %d " %
-          (my_dxl_2.id, my_dxl_2.get_present_position()))
+          (my_dxl_2.id, my_dxl_2.geesent_position()))
     print("\nPosition of dxl ID: %d is %d " %
           (my_dxl_3.id, my_dxl_3.get_present_position()))
     # desired angle input
