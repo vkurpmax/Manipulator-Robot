@@ -10,18 +10,6 @@ b = 0
 # - - - - - - - - - - - - - - - -
 GPIO.setmode(GPIO.BOARD)
 
-# Servo_4 Setup
-servo_4 = 32
-GPIO.setup(servo_4, GPIO.OUT)
-pwm = GPIO.PWM(servo_4, 50)
-pwm.start(0)
-
-# Servo_5 Setup
-servo_5 = 33
-GPIO.setup(servo_5, GPIO.OUT)
-pwm = GPIO.PWM(servo_5, 50)
-pwm.start(0)
-
 
 # - - - - - - - - - - - - - - - - 
 # - - - - DYNAMIXEL SETUP - - - -
@@ -46,7 +34,12 @@ my_dxl_3.set_moving_speed(150)
 # - - - - - - - - - - - - - - - - 
 # - - - - - - DEFINE  - - - - - -
 # - - - - - - - - - - - - - - - -
-def SetAngle_4(angle):
+def SetAngle_4(angle):          
+    # Servo_4 Setup
+    servo_4 = 32
+    GPIO.setup(servo_4, GPIO.OUT)
+    pwm = GPIO.PWM(servo_4, 50)
+    pwm.start(0)
     duty = angle / 18 + 2
     GPIO.output(servo_4, True)
     pwm.ChangeDutyCycle(duty)
@@ -55,6 +48,11 @@ def SetAngle_4(angle):
     pwm.ChangeDutyCycle(0)
 
 def SetAngle_5(angle):
+    # Servo_5 Setup
+    servo_5 = 33
+    GPIO.setup(servo_5, GPIO.OUT)
+    pwm = GPIO.PWM(servo_5, 50)
+    pwm.start(0)
     duty = angle / 18 + 2
     GPIO.output(servo_5, True)
     pwm.ChangeDutyCycle(duty)
