@@ -8,20 +8,22 @@ This repository is still on progress.
 ## Servo Structure
 - Servo 1: Dynamixel AX-12A  
 (ID: 001 | Baud rate: 1 Mbps | Protocol version: 1.0)   
-Range:
+Position Range:
 
 - Servo 2: Dynamixel AX-12A  
 (ID: 002 | Baud rate: 1 Mbps | Protocol version: 1.0)   
-Range:
+Position Range:
 
 - Servo 3: Dynamixel AX-12A  
 (ID: 003 | Baud rate: 1 Mbps | Protocol version: 1.0)   
-Range:
+Position Range:
 
 - Servo 4: Tower Pro MG996R   
 Angle Servo (PWM): 90 Degree
+Best Position: 90
 
 - Servo 5: Tower Pro SG90
+Best Position Range: 120 - 180 
 
 ![Servo Structure](https://github.com/vkurpmax/Manipulator-Robot/blob/main/README.md%20materials/Servo%20Structure.jpg?raw=true)
 
