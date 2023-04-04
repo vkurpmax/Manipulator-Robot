@@ -1,15 +1,18 @@
 from Ax12 import Ax12
+from gpiozero import Button
+from signal import pause
 import RPi.GPIO as GPIO
 import time
 
-START = 3
+
+START = Button(16)
 b = 0
 
 # - - - - - - - - - - - - - - - - 
 # - - - - - GPIO SETUP  - - - - -
 # - - - - - - - - - - - - - - - -
 GPIO.setmode(GPIO.BOARD)
-
+#GPIO.setup(START, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 # - - - - - - - - - - - - - - - - 
 # - - - - DYNAMIXEL SETUP - - - -
@@ -69,7 +72,7 @@ def user_input():
         return True
 
 def setup_2():
-    GPIO.setup(START, GPIO.IN);
+    #GPIO.setup(START, GPIO.IN);
 
 def Tunggu_Start():
     #if GPIO.input(3) == GPIO.HIGH:
@@ -91,13 +94,30 @@ def Tunggu_Start():
 # - - - -  MAIN PROGRAM   - - - -
 # - - - - - - - - - - - - - - - -
 setup_2()
-Tunggu_Start:
+
+START.wait_for_pressed()
+print("Pressed")
+my_dxl_2.set_goal_position(358)
+my_dxl_3.set_goal_position(409)
+my_dxl_1.set_goal_position(512)
+
+#val1 = map(426, 0, 1023, 0, 180)
+#SetAngle_4(val1)
+#time.sleep(0.03)
+
+#val2 = map(0, 0, 1023, 0, 180)
+#SetAngle_5(val2)
+#time.sleep(0.015)
+#b = 1
+
+pause()
+          
 
 
 
 
 """ sets goal position based on user input """
-bool_test = Truet_pr
+bool_test = True
 while bool_test:
 
     print("\nPosition of dxl ID: %d is %d " %
