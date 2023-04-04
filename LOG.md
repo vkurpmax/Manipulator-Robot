@@ -75,4 +75,8 @@ sudo apt-get install rpi.gpio
 - Order new SG90
 
 # 20230403
-- 
+- Convert C++ code to Python
+
+# 20230404
+- Verify python code (sector setup for servo 4 and 5)
+- Continue to convert C++ to python for start button sector
