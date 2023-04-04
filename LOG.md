@@ -86,5 +86,38 @@ sudo apt update
 ```
 and install
 ```
-sudo apt install python3-gpizero
+sudo apt install python3-gpizero   
 ```
+- Convert val1
+```
+val1 = map(426, 0, 1023, 0, 180);
+```
+This line of code in C++ is using a function called "map" to convert a value from one range to another.
+
+The "map" function takes five arguments, which are separated by commas:
+
+1. The first argument (426) is the value that needs to be mapped.
+2. The second argument (0) is the minimum value of the original range.
+3. The third argument (1023) is the maximum value of the original range.
+4. The fourth argument (0) is the minimum value of the target range.
+5. The fifth argument (180) is the maximum value of the target range.
+6. The function then returns a new value, which is the original value (426) mapped to the new range (0 to 180). The new value is stored in the variable "val1".
+
+So in this particular case, the code is mapping a value of 426 from a range of 0 to 1023 to a range of 0 to 180.
+
+The result will be:
+```
+val1 = int((426 - 0) * (180 - 0) / (1023 - 0) + 0)
+```
+This line of Python code is performing the same calculation as the map() function in C++ that we discussed earlier. It is taking the value 426 and mapping it from the range 0 to 1023 to the range 0 to 180.
+
+The calculation is performed using simple arithmetic operations:
+
+1. (426 - 0) computes the difference between the input value and the minimum value of the original range.
+2. (180 - 0) computes the difference between the maximum and minimum values of the target range.
+3. (1023 - 0) computes the difference between the maximum and minimum values of the original range.
+4. ((426 - 0) * (180 - 0) / (1023 - 0)) computes the proportion of the input value in relation to the original range, and scales it to the target range.
+5. +0 adds the minimum value of the target range to the scaled proportion to get the final mapped value.
+int() converts the floating-point value to an integer data type.
+
+So, the final value of val1 is an integer that represents the mapped value of 426 in the range 0 to 180.

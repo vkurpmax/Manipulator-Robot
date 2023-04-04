@@ -73,21 +73,6 @@ def user_input():
 
 def setup_2():
     #GPIO.setup(START, GPIO.IN);
-
-def Tunggu_Start():
-    #if GPIO.input(3) == GPIO.HIGH:
-        my_dxl_2.set_goal_position(358)
-        my_dxl_3.set_goal_position(409)
-        my_dxl_1.set_goal_position(512)
-        
-        val1 = map(426, 0, 1023, 0, 180)
-        SetAngle_4(val1)
-        time.sleep(0.03)
-
-        val2 = map(0, 0, 1023, 0, 180)
-        SetAngle_5(val2)
-        time.sleep(0.015)
-        b = 1
         
 
 # - - - - - - - - - - - - - - - - 
@@ -95,20 +80,23 @@ def Tunggu_Start():
 # - - - - - - - - - - - - - - - -
 setup_2()
 
-START.wait_for_pressed()
+START.wait_for_press()
 print("Pressed")
 my_dxl_2.set_goal_position(358)
 my_dxl_3.set_goal_position(409)
 my_dxl_1.set_goal_position(512)
 
-#val1 = map(426, 0, 1023, 0, 180)
-#SetAngle_4(val1)
-#time.sleep(0.03)
+val1 = int((426 - 0) * (180 - 0) / (1023 - 0) + 0)
+SetAngle_4(val1)
+time.sleep(0.03)
+val2 = int((0 - 0) * (180 - 0) / (1023 - 0) + 0)
+SetAngle_5(val2)
+time.sleep(0.015)
+b = 1
 
-#val2 = map(0, 0, 1023, 0, 180)
-#SetAngle_5(val2)
-#time.sleep(0.015)
-#b = 1
+START.wait_for_press()
+print("Pressed")
+setup_2()
 
 pause()
           
