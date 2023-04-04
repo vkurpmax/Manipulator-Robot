@@ -80,3 +80,11 @@ sudo apt-get install rpi.gpio
 # 20230404
 - Verify python code (sector setup for servo 4 and 5)
 - Continue to convert C++ to python for start button sector
+- Use gpiozero for button. Make sure you are in the home directory and do this.   
+```
+sudo apt update
+```
+and install
+```
+sudo apt install python3-gpizero
+```
