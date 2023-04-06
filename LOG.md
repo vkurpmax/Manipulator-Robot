@@ -128,3 +128,44 @@ So, the final value of val1 is an integer that represents the mapped value of 42
 # 20230406
 - Part 1 validation success.
 - Total 94 rows of code.
+- Move to LCD: Source: https://rplcd.readthedocs.io/en/stable/installation.html   
+install RPLCD directly from PyPI using pip:
+```
+sudo pip install RPLCD
+```
+to use I²C, you also need smbus:
+```
+sudo apt-get install python3-smbus
+```
+Configure the interface setting for i2c: (additional if not works)
+```
+sudo raspi-config
+```
+Go to Interface Options   
+Enable I2C   
+and then Finish   
+: (additional if not works)
+```
+lsmod | grep i2c
+```
+: (additional if not works)
+```
+i2cdetect -y 1
+```
+: (additional if not works)
+```
+sudo apt-get install libi2c-dev
+```
+: (additional if not works)
+```
+sudo pip3 install smbus2
+```
+- Configure Static IP Address:
+```
+sudo nano /etc/dhcpd.conf
+```
+write this:
+```
+interface wlan0
+static ip_address=192.168.235/24
+```
