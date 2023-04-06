@@ -148,7 +148,7 @@ and then Finish
 ```
 lsmod | grep i2c
 ```
-: (additional if not works)
+to check i2c adress: (additional if not works)
 ```
 i2cdetect -y 1
 ```
