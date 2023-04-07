@@ -1,18 +1,18 @@
 from Ax12 import Ax12
 from gpiozero import Button
 from signal import pause
+from RPLCD.i2c import CharLCD
 import RPi.GPIO as GPIO
 import time
 
 # - - - - - - - - - - - - - - - - 
-# - - - - - GPIO SETUP  - - - - -
+# - - - - - - - SETUP - - - - - -
 # - - - - - - - - - - - - - - - -
+## GPIO SETUP
 START = Button(16)          # Using GPIO 16
 b = 0
 
-# - - - - - - - - - - - - - - - - 
-# - - - - DYNAMIXEL SETUP - - - -
-# - - - - - - - - - - - - - - - -
+## DYNAMIXEL SETUP
 # e.g 'COM3' windows or '/dev/ttyUSB0' for Linux
 Ax12.DEVICENAME = '/dev/ttyUSB0'
 
@@ -28,6 +28,9 @@ my_dxl_3 = Ax12(3)
 my_dxl_1.set_moving_speed(50)
 my_dxl_2.set_moving_speed(50)
 my_dxl_3.set_moving_speed(50)
+
+## LCD SETUP
+lcd = CharLCD('PCF8574', 0x27)
 
 
 # - - - - - - - - - - - - - - - - 
@@ -60,6 +63,15 @@ def SetAngle_5(angle):
     pwm.ChangeDutyCycle(0)
 
 def InputKordinat_X():
+    lcd.clear()
+    lcd.cursor_pos = (0, 0)
+    lcd.write_string('INPUT KOORDINAT X,Y,Z')
+    lcd.cursor_pos = (1, 0)
+    lcd.write_string('KOORDINAT X:')
+    lcd.cursor_pos = (3, 0)
+    lcd.write_string('TEKAN D JIKA SELESAI')
+
+    
             
 
 # - - - - - - - - - - - - - - - - 
