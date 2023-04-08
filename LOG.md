@@ -171,3 +171,7 @@ static ip_address=192.168.235/24
 ```
 # 20230407
 - Continuing Code Transformation. Part 2 section LCD.
+
+# 20230408
+- I found that my Raspi IP address is still changed. So I use Zenmap to resolve this problem.
+
