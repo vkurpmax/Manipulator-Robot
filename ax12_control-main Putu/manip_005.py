@@ -32,6 +32,38 @@ my_dxl_3.set_moving_speed(50)
 ## LCD SETUP
 lcd = CharLCD('PCF8574', 0x27)
 
+## KEYPAD SETUP
+# Define the keypad pins
+MATRIX = [[1, 2, 3, "A"],
+          [4, 5, 6, "B"],
+          [7, 8, 9, "C"],
+          ["*", 0, "#", "D"]]
+
+ROW = [6, 13, 19, 26]
+COL = [17, 27, 22, 5]
+
+# Set the pin mode for the keypad pins
+for j in range(4):
+    GPIO.setup(COL[j], GPIO.OUT)
+    GPIO.output(COL[j], 1)
+
+for i in range(4):
+    GPIO.setup(ROW[i], GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+# Function to read the keypad
+def keypad():
+    for j in range(4):
+        GPIO.output(COL[j], 0)
+
+        for i in range(4):
+            if GPIO.input(ROW[i]) == 0:
+                time.sleep(0.02)
+                while GPIO.input(ROW[i]) == 0:
+                    pass
+                return MATRIX[i][j]
+            
+        GPIO.output(COL[j], 1)
+    return None
 
 # - - - - - - - - - - - - - - - - 
 # - - - - - - DEFINE  - - - - - -
@@ -62,7 +94,53 @@ def SetAngle_5(angle):
     GPIO.output(servo_5, False)
     pwm.ChangeDutyCycle(0)
 
-def InputKordinat_X():
+def InputKoordinat_X():
+    keypressed = keypad()
+    try:
+        while True:
+            lcd.clear()
+            lcd.cursor_pos = (0, 0)
+            lcd.write_string('INPUT KOORDINAT X,Y,Z')
+            lcd.cursor_pos = (1, 0)
+            lcd.write_string('KOORDINAT X:')
+            lcd.cursor_pos = (3, 0)
+            lcd.write_string('TEKAN D JIKA SELESAI')
+
+            keypressed
+            if keypressed == 'D':
+                print(keypressed)
+                a = 0
+                lcd.clear()
+                break
+
+            else:
+                keypressed
+                count = 0
+                count += 1
+                if count >= 0 and count <=20:
+                    lcd.cursor_pos = (2, a)
+                    lcd.print(keypressed)
+                    print(keypressed)
+                a += 1
+                InputKoordinat_X += keypressed
+                X = int(InputKoordinat_X)
+                print(X)
+                if keypressed == 'C':
+                    print(keypressed)
+                    lcd.clear()
+                    lcd.cursor_pos = (1, 0)
+                    lcd.write_string('  INPUT BERHASIL ')
+                    lcd.cursor_pos = (2, 0)
+                    lcd.write_string('   TERHAPUS   ')
+                    InputKoordinat_X = ''
+                    a = 0
+                    time.sleep(5)
+    except KeyboardInterrupt:
+        print('All Good to Go')
+        GPIO.cleanup()
+
+
+
     lcd.clear()
     lcd.cursor_pos = (0, 0)
     lcd.write_string('INPUT KOORDINAT X,Y,Z')
@@ -71,8 +149,34 @@ def InputKordinat_X():
     lcd.cursor_pos = (3, 0)
     lcd.write_string('TEKAN D JIKA SELESAI')
 
-    
-            
+    keypressed = keypad()
+    if keypressed == 'D':
+        print(keypressed)
+        a = 0
+        lcd.clear()
+    else:
+        keypressed
+        count = 0
+        count += 1
+        if count >= 0 and count <=20:
+            lcd.cursor_pos = (2, a)
+            lcd.print(keypressed)
+            print(keypressed)
+        a += 1
+        InputKoordinat_X += keypressed
+        X = int(InputKoordinat_X)
+        print(X)
+        if keypressed == 'C':
+            print(keypressed)
+            lcd.clear()
+            lcd.cursor_pos = (1, 0)
+            lcd.write_string('  INPUT BERHASIL ')
+            lcd.cursor_pos = (2, 0)
+            lcd.write_string('   TERHAPUS   ')
+            InputKoordinat_X = ''
+            a = 0
+            time.sleep(5)
+
 
 # - - - - - - - - - - - - - - - - 
 # - - - -  MAIN PROGRAM   - - - -
