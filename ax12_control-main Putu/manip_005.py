@@ -45,7 +45,7 @@ MATRIX = [[1, 2, 3, "A"],
           [7, 8, 9, "C"],
           ["*", 0, "#", "D"]]
 
-ROW = [6, 13, 19, 26]
+ROW = [6, 19, 26, 23]
 COL = [17, 27, 22, 5]
 
 # Set the pin mode for the keypad pins
