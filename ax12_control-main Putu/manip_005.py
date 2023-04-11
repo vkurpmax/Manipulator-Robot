@@ -5,12 +5,18 @@ from RPLCD.i2c import CharLCD
 import RPi.GPIO as GPIO
 import time
 
+# Declare Variables
+a = 0
+b = 0
+X = 0.0
+keypressed = ''
+IptKoordinat_X = ''
+
 # - - - - - - - - - - - - - - - - 
 # - - - - - - - SETUP - - - - - -
 # - - - - - - - - - - - - - - - -
 ## GPIO SETUP
 START = Button(16)          # Using GPIO 16
-b = 0
 
 ## DYNAMIXEL SETUP
 # e.g 'COM3' windows or '/dev/ttyUSB0' for Linux
@@ -65,6 +71,15 @@ def keypad():
         GPIO.output(COL[j], 1)
     return None
 
+# Function to iterate keypad()
+def key():
+    global keypressed
+    while True:
+        keypressed = keypad()
+        if keypressed is not None:
+            time.sleep(0.02)
+            break
+
 # - - - - - - - - - - - - - - - - 
 # - - - - - - DEFINE  - - - - - -
 # - - - - - - - - - - - - - - - -
@@ -95,38 +110,29 @@ def SetAngle_5(angle):
     pwm.ChangeDutyCycle(0)
 
 def InputKoordinat_X():
-    keypressed = keypad()
-    try:
+    global a, b, X, IptKoordinat_X, keypressed
+    count = 0
+    while True:
+        print('LCD Homepage')
+        lcd.clear()
+        lcd.cursor_pos = (0, 0)
+        lcd.write_string('INPUT KOORDINAT X,Y,Z')
+        lcd.cursor_pos = (1, 0)
+        lcd.write_string('KOORDINAT X:')
+        lcd.cursor_pos = (3, 0)
+        lcd.write_string('TEKAN D JIKA SELESAI')
+        
         while True:
-            lcd.clear()
-            lcd.cursor_pos = (0, 0)
-            lcd.write_string('INPUT KOORDINAT X,Y,Z')
-            lcd.cursor_pos = (1, 0)
-            lcd.write_string('KOORDINAT X:')
-            lcd.cursor_pos = (3, 0)
-            lcd.write_string('TEKAN D JIKA SELESAI')
-
-            keypressed
+            key()
             if keypressed == 'D':
                 print(keypressed)
                 a = 0
                 lcd.clear()
-                break
-
+                return
             else:
-                keypressed
-                count = 0
                 count += 1
-                if count >= 0 and count <=20:
-                    lcd.cursor_pos = (2, a)
-                    lcd.print(keypressed)
-                    print(keypressed)
-                a += 1
-                InputKoordinat_X += keypressed
-                X = int(InputKoordinat_X)
-                print(X)
                 if keypressed == 'C':
-                    print(keypressed)
+                    print('C2')
                     lcd.clear()
                     lcd.cursor_pos = (1, 0)
                     lcd.write_string('  INPUT BERHASIL ')
@@ -135,52 +141,29 @@ def InputKoordinat_X():
                     InputKoordinat_X = ''
                     a = 0
                     time.sleep(5)
-    except KeyboardInterrupt:
-        print('All Good to Go')
-        GPIO.cleanup()
-
-
-
-    lcd.clear()
-    lcd.cursor_pos = (0, 0)
-    lcd.write_string('INPUT KOORDINAT X,Y,Z')
-    lcd.cursor_pos = (1, 0)
-    lcd.write_string('KOORDINAT X:')
-    lcd.cursor_pos = (3, 0)
-    lcd.write_string('TEKAN D JIKA SELESAI')
-
-    keypressed = keypad()
-    if keypressed == 'D':
-        print(keypressed)
-        a = 0
-        lcd.clear()
-    else:
-        keypressed
-        count = 0
-        count += 1
-        if count >= 0 and count <=20:
-            lcd.cursor_pos = (2, a)
-            lcd.print(keypressed)
-            print(keypressed)
-        a += 1
-        InputKoordinat_X += keypressed
-        X = int(InputKoordinat_X)
-        print(X)
-        if keypressed == 'C':
-            print(keypressed)
-            lcd.clear()
-            lcd.cursor_pos = (1, 0)
-            lcd.write_string('  INPUT BERHASIL ')
-            lcd.cursor_pos = (2, 0)
-            lcd.write_string('   TERHAPUS   ')
-            InputKoordinat_X = ''
-            a = 0
-            time.sleep(5)
+                    break
+                elif count >= 0 and count <= 20:
+                    IptKoordinat_X = f"{IptKoordinat_X}{keypressed}"
+                    print(IptKoordinat_X)
+                    X = int(IptKoordinat_X)
+                    if keypressed == 'C':
+                        print('C1')
+                        lcd.clear()
+                        lcd.cursor_pos = (1, 0)
+                        lcd.write_string('  INPUT BERHASIL ')
+                        lcd.cursor_pos = (2, 0)
+                        lcd.write_string('   TERHAPUS   ')
+                        InputKoordinat_X = ''
+                        a = 0
+                        time.sleep(5)
+                        break
+        print('C3')
 
 
 # - - - - - - - - - - - - - - - - 
 # - - - -  MAIN PROGRAM   - - - -
 # - - - - - - - - - - - - - - - -
+# SECTION 1: Servo Initial Position
 START.wait_for_press()
 print("Pressed")
 my_dxl_2.set_goal_position(358)
@@ -200,35 +183,15 @@ b = 1
 START.wait_for_press()
 print("Pressed")
 
-InputKordinat_X();
-InputKordinat_Y();
-InputKordinat_Z();
 
-lcd.setCursor(0,0);
-lcd.print("INPUT X= ");
-lcd.setCursor(10,0);
-lcd.print(X);
-lcd.setCursor(0,1);
-lcd.print("INPUT Y= ");
-lcd.setCursor(10,1);
-lcd.print(Y);
-lcd.setCursor(0,2);
-lcd.print("INPUT Z= ");
-lcd.setCursor(10,2);
-lcd.print(Z);
-lcd.setCursor(0,3);
-lcd.print("START=INPUTAN KEDUA");
-delay(2000);
-Formulasi();
-
+# SECTION 2: Input Koordinat
+InputKoordinat_X();
 START.wait_for_press()
 
-# - - - - - - - - - - - - - - - - 
-# - - - - - DISCONNECT  - - - - -
-# - - - - - - - - - - - - - - - -
+
+# SECTION 3: Disconnect Servo and Clean GPIO
 my_dxl_1.set_torque_enable(0)
 my_dxl_2.set_torque_enable(0)
 my_dxl_3.set_torque_enable(0)
 Ax12.disconnect()
-
 GPIO.cleanup()
