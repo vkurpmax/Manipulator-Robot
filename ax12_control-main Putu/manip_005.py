@@ -187,7 +187,7 @@ print("Pressed")
 # SECTION 2: Input Koordinat
 InputKoordinat_X();
 START.wait_for_press()
-
+print('Selesai')
 
 # SECTION 3: Disconnect Servo and Clean GPIO
 my_dxl_1.set_torque_enable(0)
