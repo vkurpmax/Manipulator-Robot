@@ -126,7 +126,7 @@ So, the final value of val1 is an integer that represents the mapped value of 42
 - Test code part 1.
 
 # 20230406
-- Part 1 validation success.
+- Part 1 validation success. Saved as manip_004.py
 - Total 94 rows of code.
 - Move to LCD: Source: https://rplcd.readthedocs.io/en/stable/installation.html   
 install RPLCD directly from PyPI using pip:
