@@ -113,6 +113,8 @@ def InputKoordinat_X():
     global a, b, X, IptKoordinat_X, keypressed
     count = 0
     while True:
+        IptKoordinat_X = ''
+        X = 0
         print('LCD Homepage')
         lcd.clear()
         lcd.cursor_pos = (0, 0)
@@ -138,14 +140,18 @@ def InputKoordinat_X():
                     lcd.write_string('  INPUT BERHASIL ')
                     lcd.cursor_pos = (2, 0)
                     lcd.write_string('   TERHAPUS   ')
-                    InputKoordinat_X = ''
+                    #InputKoordinat_X = ''
                     a = 0
-                    time.sleep(5)
+                    time.sleep(1)
                     break
                 elif count >= 0 and count <= 20:
+                    lcd.cursor_pos = (2, count)
+                    lcd.write_string(str(keypressed))
+                    a += 1
                     IptKoordinat_X = f"{IptKoordinat_X}{keypressed}"
                     print(IptKoordinat_X)
                     X = int(IptKoordinat_X)
+                    print(X)
                     if keypressed == 'C':
                         print('C1')
                         lcd.clear()
@@ -155,7 +161,7 @@ def InputKoordinat_X():
                         lcd.write_string('   TERHAPUS   ')
                         InputKoordinat_X = ''
                         a = 0
-                        time.sleep(5)
+                        time.sleep(1)
                         break
         print('C3')
 
@@ -185,7 +191,7 @@ print("Pressed")
 
 
 # SECTION 2: Input Koordinat
-InputKoordinat_X();
+InputKoordinat_X()
 START.wait_for_press()
 print('Selesai')
 
