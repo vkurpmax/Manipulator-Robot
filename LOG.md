@@ -187,5 +187,7 @@ static ip_address=192.168.235/24
 - Finishing Section-2: InputKoordinat_X(). Waiting for validation.
 
 # 20230412
-- Part 2 Validation Complete.
-- Code: 
+- Part 2 Validation Complete. 203 Rows of code. Saved as manip_005.py
+
+# 20230413
+- Ready to continue to part 3.
