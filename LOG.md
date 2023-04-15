@@ -191,3 +191,6 @@ static ip_address=192.168.235/24
 
 # 20230413
 - Ready to continue to part 3.
+
+# 20230415
+- Continue to Section 3: InputKoordinat_Y()
