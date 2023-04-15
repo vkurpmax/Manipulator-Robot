@@ -194,3 +194,4 @@ static ip_address=192.168.235/24
 
 # 20230415
 - Continue to Section 3: InputKoordinat_Y()
+- Finishing Section-3: InputKoordinat_Y(). Waiting for validation.
