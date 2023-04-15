@@ -120,7 +120,7 @@ def InputKoordinat_X():
     while True:
         IptKoordinat_X = ''
         X = 0
-        print('LCD Homepage')
+        print('LCD Homepage X')
         lcd.clear()
         lcd.cursor_pos = (0, 0)
         lcd.write_string('INPUT KOORDINAT X,Y,Z')
@@ -145,7 +145,6 @@ def InputKoordinat_X():
                     lcd.write_string('  INPUT BERHASIL ')
                     lcd.cursor_pos = (2, 0)
                     lcd.write_string('   TERHAPUS   ')
-                    #InputKoordinat_X = ''
                     a = 0
                     time.sleep(1)
                     break
@@ -154,7 +153,6 @@ def InputKoordinat_X():
                     lcd.write_string(str(keypressed))
                     a += 1
                     IptKoordinat_X = f"{IptKoordinat_X}{keypressed}"
-                    print(IptKoordinat_X)
                     X = int(IptKoordinat_X)
                     print(X)
                     if keypressed == 'C':
@@ -164,12 +162,10 @@ def InputKoordinat_X():
                         lcd.write_string('  INPUT BERHASIL ')
                         lcd.cursor_pos = (2, 0)
                         lcd.write_string('   TERHAPUS   ')
-                        IptKoordinat_X = ''
                         a = 0
                         time.sleep(1)
                         break
         print('C3')
-    print(X)
 
 def InputKoordinat_Y():
     global a, b, Y, IptKoordinat_Y, keypressed
@@ -202,7 +198,6 @@ def InputKoordinat_Y():
                     lcd.write_string('  INPUT BERHASIL ')
                     lcd.cursor_pos = (2, 0)
                     lcd.write_string('   TERHAPUS   ')
-                    #InputKoordinat_Y = ''
                     a = 0
                     time.sleep(1)
                     break
@@ -221,7 +216,6 @@ def InputKoordinat_Y():
                         lcd.write_string('  INPUT BERHASIL ')
                         lcd.cursor_pos = (2, 0)
                         lcd.write_string('   TERHAPUS   ')
-                        IptKoordinat_Y = ''
                         a = 0
                         time.sleep(1)
                         break
@@ -254,9 +248,13 @@ print("Pressed")
 
 # SECTION 2: Input Koordinat X
 InputKoordinat_X()
+print(X)
+print("Ipt Koordinat X: %s" % (IptKoordinat_X))
 
 # SECTION 3: Input Koordinat Y
 InputKoordinat_Y()
+print(Y)
+print("Ipt Koordinat Y: %s" % (IptKoordinat_Y))
 
 START.wait_for_press()
 print('Selesai')
