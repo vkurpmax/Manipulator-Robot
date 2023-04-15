@@ -196,3 +196,6 @@ static ip_address=192.168.235/24
 - Continue to Section 3: InputKoordinat_Y()
 - Finishing Section-3: InputKoordinat_Y(). Waiting for validation.
 - Validation Section-3 Complete. Total 267 rows of code. Saved as manip_006.py
+
+# 20230416
+- Continue to Section-4: InputKoordinat_Z()
