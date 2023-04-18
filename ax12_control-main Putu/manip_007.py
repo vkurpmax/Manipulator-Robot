@@ -235,7 +235,7 @@ def InputKoordinat_Z():
         lcd.cursor_pos = (0, 0)
         lcd.write_string('INPUT KOORDINAT X,Y,Z')
         lcd.cursor_pos = (1, 0)
-        lcd.write_string('KOORDINAT Y:')
+        lcd.write_string('KOORDINAT Z:')
         lcd.cursor_pos = (3, 0)
         lcd.write_string('TEKAN D JIKA SELESAI')
         

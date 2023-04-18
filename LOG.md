@@ -199,3 +199,6 @@ static ip_address=192.168.235/24
 
 # 20230416
 - Continue to Section-4: InputKoordinat_Z()
+
+# 20230418
+- Section-4 Complete. Waiting for validation.
