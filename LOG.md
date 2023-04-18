@@ -201,4 +201,7 @@ static ip_address=192.168.235/24
 - Continue to Section-4: InputKoordinat_Z()
 
 # 20230418
-- Section-4 Complete. Waiting for validation.
+- Section-4: Input Koordinat_Z() Complete. Waiting for validation.
+
+# 20230419
+- Section-4: Input Koordinat_Z() Validation Complete. Total 329 rows of code. Saved as manip_007.py.
