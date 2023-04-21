@@ -206,3 +206,9 @@ static ip_address=192.168.235/24
 # 20230419
 - Section-4: Input Koordinat_Z() Validation Complete. Total 329 rows of code. Saved as manip_007.py.
 - Move to Section-5: Formulasi()
+
+# 20230420
+- Finish Section-5: Formulasi(). Waiting for validation
+
+# 20230421
+- Study Inverse Kinematics.
