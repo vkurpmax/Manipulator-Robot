@@ -212,3 +212,6 @@ static ip_address=192.168.235/24
 
 # 20230421
 - Study Inverse Kinematics.
+
+# 20230423
+- Section-5: Formulasi. Code Validation Complete. Waiting for mathematical validation.
