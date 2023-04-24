@@ -216,3 +216,6 @@ static ip_address=192.168.235/24
 # 20230423
 - Section-5: Formulasi. Code Validation Complete. Total 430 rows of code.
 - Waiting for mathematical verification and validation.
+
+# 20230424
+- Section-5: theta1. Mathematical Result is wrong.
