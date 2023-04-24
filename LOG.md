@@ -219,3 +219,4 @@ static ip_address=192.168.235/24
 
 # 20230424
 - Section-5: theta1. Mathematical Result is wrong.
+- Fixing theta1 display result
