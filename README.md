@@ -8,15 +8,18 @@ This repository is still on progress.
 ## Servo Structure
 - Servo 1: Dynamixel AX-12A  
 (ID: 001 | Baud rate: 1 Mbps | Protocol version: 1.0)   
-Position Range:
+CW Angle Limit: 500   
+CCW Angle Limit: 810
 
 - Servo 2: Dynamixel AX-12A  
 (ID: 002 | Baud rate: 1 Mbps | Protocol version: 1.0)   
-Position Range:
+CW Angle Limit: 165   
+CCW Angle Limit: 450
 
 - Servo 3: Dynamixel AX-12A  
 (ID: 003 | Baud rate: 1 Mbps | Protocol version: 1.0)   
-Position Range:
+CW Angle Limit: 215   
+CCW Angle Limit: 790
 
 - Servo 4: Tower Pro MG996R   
 Angle Servo (PWM): 90 Degree
