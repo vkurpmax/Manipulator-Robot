@@ -214,7 +214,7 @@ static ip_address=192.168.235/24
 - Study Inverse Kinematics.
 
 # 20230423
-- Section-5: Formulasi. Code Validation Complete. Total 430 rows of code.
+- Section-5: Formulasi. Code Validation Complete. Total 430 rows of code. Saved as manip_008.py
 - Waiting for mathematical verification and validation.
 
 # 20230424
@@ -223,4 +223,6 @@ static ip_address=192.168.235/24
 
 # 20230426
 - Mathematical Error is fixed validation.
-- 
+
+# 20230427
+- Continue to Section-6: Gerakan_1().
