@@ -237,3 +237,4 @@ static ip_address=192.168.235/24
 
 # 20230503
 - Consider to use Rubik's cube as object.
+- Considering to use tennis ball as object.
