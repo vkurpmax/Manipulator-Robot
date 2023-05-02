@@ -226,3 +226,7 @@ static ip_address=192.168.235/24
 
 # 20230427
 - Continue to Section-6: Gerakan_1().
+
+# 20230502
+- Move to Stage-2: Deep Learning
+- Order raspberry pi camera
