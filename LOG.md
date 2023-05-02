@@ -231,4 +231,5 @@ static ip_address=192.168.235/24
 - Move to Stage-2: Deep Learning
 - Order raspberry pi camera
 - Section-6: Gerakan_1() validation complete. 466 rows of code. saved as manip_009.py
-- Research on deep learning method I will use: Faster R-CNN or YOLO
+- Research on deep learning method I will use: Faster R-CNN or YOLO.
+- I decided to use YOLO.
