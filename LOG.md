@@ -234,3 +234,6 @@ static ip_address=192.168.235/24
 - Research on deep learning method I will use: Faster R-CNN or YOLO.
 - I decided to use YOLO.
 - Learn object detection and Instance Segmentation.
+
+# 20230503
+- Consider to use Rubik's cube as object.
