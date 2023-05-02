@@ -340,16 +340,27 @@ def Formulasi():
 
 def gerakan_1():
     global T1, T2, T3
-    global val1
-    my_dxl_1.set_goal_position(T1)
+    global val1, val2
+
+    val1 = int((511.5 - 0) * (180 - 0) / (1023 - 0) + 0)    # Result: 90
+    SetAngle_4(val1)
+    time.sleep(0.04)
+
+    val2 = int((1023 - 0) * (180 - 0) / (1023 - 0) + 0)
+    SetAngle_5(val2)
+    time.sleep(1)
+
+    my_dxl_1.set_goal_position(int(T1))
     time.sleep(2)
-    my_dxl_2.set_goal_position(T2)
+    my_dxl_2.set_goal_position(int(T2))
     time.sleep(2)
-    my_dxl_3.set_goal_position(T3)
+    my_dxl_3.set_goal_position(int(T3))
     time.sleep(2)
 
-    val1 = int((0 - 0) * (180 - 0) / (1023 - 0) + 0)
-    SetAngle_4(val1)
+    val2 = int((682 - 0) * (180 - 0) / (1023 - 0) + 0)
+    SetAngle_5(val2)
+    time.sleep(1)
+    
     time.sleep(0.015)
     b = 2
 
@@ -368,7 +379,7 @@ my_dxl_1.set_goal_position(512)
 val1 = int((511.5 - 0) * (180 - 0) / (1023 - 0) + 0)
 print("Val-1: %d" % (val1))         # Result: 90 before 74
 SetAngle_4(val1)
-time.sleep(0.03)
+time.sleep(0.04)
 val2 = int((682 - 0) * (180 - 0) / (1023 - 0) + 0)
 print("Val-2: %d" % (val2))         # Result: 120 before 0
 SetAngle_5(val2)
