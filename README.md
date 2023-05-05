@@ -44,6 +44,16 @@ Best Position Range: 120 - 180
 - [USB to TTL](https://www.tokopedia.com/dx-tronics/ft232-usb-to-ttl-serial-3-3v-5v-ftdi-ft232rl)
 - [U2D2 Power Hub](https://www.tokopedia.com/digiware/u2d2-power-hub-board-phb-set)
 
+### Raspberry Pi 3 Model B (Japan Version)
+
+- RAM: 1 GB
+- Operating system: [Raspberry Pi OS with Desktop (64-bit)](https://www.raspberrypi.com/software/operating-systems/)
+- Release date: February 21st 2023
+- System: 64-bit
+- Kernel version: 6.1
+- Debian version: 11 (bullseye)
+
+
 ## Datasheet / Manual
 - [Dynamixel AX-12A](https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/)
 - [Dynamixel Protocol 1.0](https://emanual.robotis.com/docs/en/dxl/protocol1/)
@@ -79,3 +89,10 @@ Best Position Range: 120 - 180
 - Solidworks
 - SVM
 - Unified Robot Description Format URDF and DH parameters
+
+## Mapping Deep Learning
+- Set camera
+- Create Dataset
+    - Data Collection
+    - Data Annotation: cvat.ai   
+    all notation and numbers will be expressed in relative coordinates.

@@ -238,3 +238,13 @@ static ip_address=192.168.235/24
 # 20230503
 - Consider to use Rubik's cube as object.
 - Considering to use tennis ball as object.
+
+# 20230505
+- Camera Setup
+```
+sudo raspi-config
+```
+Select "**3. Interface Options**"  
+Select "**I1 Legacy Camera**"  
+Select "**YES**"  
+Select "**OK**"
