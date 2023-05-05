@@ -250,3 +250,15 @@ Select "**Yes**"
 Select "**OK**"  
 Select "**Finish**"  
 If there is a prompt to reboot, select "**Yes**"
+
+- Solve VNC resolution problem:   
+If you find that raspberry pi resolution is too big using VNC then follow this step:
+```
+sudo nano /boot/config.txt
+```
+then uncomment (remove the hashtag) '**#framebuffer_width=1280**' and '**#framebuffer_height=720**' so it will look like this:
+```
+framebuffer_width=1280
+framebuffer_height=720
+```
+save it, then reboot. After that try to connect again using vnc.
