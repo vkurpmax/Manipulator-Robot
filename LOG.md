@@ -240,17 +240,6 @@ static ip_address=192.168.235/24
 - Considering to use tennis ball as object.
 
 # 20230505
-- Camera Setup
-```
-sudo raspi-config
-```
-Select "**3. Interface Options**"  
-Select "**I1 Legacy Camera**"  
-Select "**Yes**"  
-Select "**OK**"  
-Select "**Finish**"  
-If there is a prompt to reboot, select "**Yes**"
-
 - Solve VNC resolution problem:   
 If you find that raspberry pi resolution is too big using VNC then follow this step:
 ```
@@ -262,3 +251,17 @@ framebuffer_width=1280
 framebuffer_height=720
 ```
 save it, then reboot. After that try to connect again using vnc.
+
+- Camera Setup:
+```
+pip install opencv-python==4.6.0.66
+```
+to check if the installation goes right:
+```
+python
+```
+```
+import cv2
+cv2.__version__
+quit()
+```
