@@ -246,5 +246,7 @@ sudo raspi-config
 ```
 Select "**3. Interface Options**"  
 Select "**I1 Legacy Camera**"  
-Select "**YES**"  
-Select "**OK**"
+Select "**Yes**"  
+Select "**OK**"  
+Select "**Finish**"  
+If there is a prompt to reboot, select "**Yes**"
