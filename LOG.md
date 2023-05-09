@@ -265,3 +265,9 @@ import cv2
 cv2.__version__
 quit()
 ```
+
+# 20230506
+- Find Camera coordinat, X, Y, Z
+
+# 20230509
+- 
