@@ -270,4 +270,10 @@ quit()
 - Find Camera coordinat, X, Y, Z
 
 # 20230509
-- 
+- Package Arducam Camera arrived
+
+# 20230510
+- Design camera mounting table using autodesk inventor 2023
+
+# 20230511
+- Setting Camera Position to the manipulator table
