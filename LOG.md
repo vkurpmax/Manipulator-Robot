@@ -280,3 +280,4 @@ quit()
 
 # 20230512
 - I got problem with forward kinematics
+- Forward kinematic formula has been found.
