@@ -277,3 +277,6 @@ quit()
 
 # 20230511
 - Setting Camera Position to the manipulator table
+
+# 20230512
+- I got problem with forward kinematics
