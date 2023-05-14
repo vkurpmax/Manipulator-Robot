@@ -281,3 +281,10 @@ quit()
 # 20230512
 - I got problem with forward kinematics
 - Forward kinematic formula has been found.
+
+# 20230513
+- Data Collecting
+
+# 20230514
+- Successfully draw bounding box, get the X, Y, H, W relatives coordinates.
+- Train the model. Dataset only 1. Not success.
