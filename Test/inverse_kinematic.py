@@ -59,12 +59,12 @@ def Formulasi():
     T3a = theta3 * 180.0 / math.pi  # Degree    # T3a is theta3 in Degree
 
     T1 = (150 + T1a) * 3.41
-    T2 = (60 + T2a) * 3.41
+    T2 = (16 + T2a) * 3.41
     T3 = (150 + T3a) * 3.41
 
-X = 251
-Y = 145
-Z = 128
+X = 268
+Y = 153
+Z = 30
 
 Formulasi()
 

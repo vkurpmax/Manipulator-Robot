@@ -11,7 +11,7 @@ def Formulasi():
     L2 = 165    # mm
     L3 = 155    # mm
     
-    h = 43
+    h = 0
     
     T1a = (T1 / 3.41) - 150
     T2a = (T2 / 3.41) - 60
@@ -43,8 +43,8 @@ def Formulasi():
     Z = h + L1
 
 T1 = 613
-T2 = 253
-T3 = 349
+T2 = 190
+T3 = 408
 
 Formulasi()
 
@@ -66,5 +66,4 @@ print("")
 print("X : %.f" % (X))
 print("Y : %.f" % (Y))
 print("Z : %.f" % (Z))
-
 
