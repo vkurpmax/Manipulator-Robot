@@ -288,3 +288,9 @@ quit()
 # 20230514
 - Successfully draw bounding box, get the X, Y, H, W relatives coordinates.
 - Train the model. Dataset only 1. Not success.
+
+# 20230517
+- Data Collection and Annotation. Total Now: 10 images
+
+# 20230518
+- Data Collection and Annotation. Total Data: 20 images
