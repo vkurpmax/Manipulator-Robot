@@ -67,6 +67,8 @@ Best Position Range: 120 - 180
 - [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 - [Roboplus R+ Task 3.0](https://emanual.robotis.com/docs/en/software/rplustask3/)
 - [Matlab]()
+- MySQL
+- Microsoft Visual Studio Code
 
 ## Prerequisites
 1. [Inverse Kinematics](https://github.com/vkurpmax/Manipulator-Robot/blob/main/Inverse_Kinematics.md)
