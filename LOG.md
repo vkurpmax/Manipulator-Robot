@@ -294,3 +294,6 @@ quit()
 
 # 20230518
 - Data Collection and Annotation. Total Data: 20 images
+- Data Collection and Annotation. Total Data: 30 images
+
+# 20230519
