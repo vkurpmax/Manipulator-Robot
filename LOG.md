@@ -297,3 +297,12 @@ quit()
 - Data Collection and Annotation. Total Data: 30 images
 
 # 20230519
+
+# 20230521
+- Collecting data 31-40
+
+# 20230522
+- Annotating 31-40 data
+
+# 20230524
+- Collecting 50 data has completed
