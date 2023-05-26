@@ -306,3 +306,14 @@ quit()
 
 # 20230524
 - Collecting 50 data has completed
+
+# 20230526
+Try to work on local
+## A. Installing Python
+## B. Sublime Text
+### 1) Installing tqdm
+On Sublime Terminal:
+```
+pip install tqdm --upgrade
+pip install ipykernel
+```
