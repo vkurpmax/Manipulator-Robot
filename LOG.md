@@ -317,3 +317,7 @@ On Sublime Terminal:
 pip install tqdm --upgrade
 pip install ipykernel
 ```
+### 2) Installing torch cuda
+```
+pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+```
