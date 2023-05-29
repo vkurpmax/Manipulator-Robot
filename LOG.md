@@ -321,3 +321,8 @@ pip install ipykernel
 ```
 pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
 ```
+# 20230529
+- Making RPI mount
+
+# 20230530
+- CPU and RAM is not enough for deep learning
