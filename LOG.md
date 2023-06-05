@@ -326,3 +326,11 @@ pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.
 
 # 20230530
 - CPU and RAM is not enough for deep learning
+
+# 20230605
+- Replacing Raspberry pi 3 Model B to Raspberry Pi 4 Model B 8GB RAM
+- Using Zenmap:   
+Profile: Ping Scan 
+```
+nmap -sn 192.168.188.1-255
+```
