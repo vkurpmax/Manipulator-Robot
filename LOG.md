@@ -334,3 +334,40 @@ Profile: Ping Scan
 ```
 nmap -sn 192.168.188.1-255
 ```
+- Clone micro SD card:   
+ChatGPT
+To clone a micro SD card on a Raspberry Pi, you can use the built-in utility called "dd." Here's a step-by-step guide on how to clone a micro SD card:
+
+Note: The process described below assumes you have a Raspberry Pi with a desktop environment. If you're using a headless Raspberry Pi (without a monitor), you can still follow the same steps via SSH.
+
+Insert the source micro SD card that you want to clone into the Raspberry Pi's micro SD card slot.
+
+Connect the Raspberry Pi to a power source and boot it up.
+
+Once the Raspberry Pi has booted, open a terminal window. You can usually find the terminal icon in the taskbar or the Applications menu.
+
+In the terminal, type the following command to identify the source micro SD card:
+```
+sudo fdisk -l
+```
+This command lists all the available disks and their partitions. Identify the device corresponding to your micro SD card. It's usually something like "/dev/mmcblk0" or "/dev/sdX" (where X is a letter).
+
+Make a note of the device name (e.g., "/dev/mmcblk0" or "/dev/sdX") for later use.
+
+Now, insert the destination micro SD card (the one you want to clone to) into the Raspberry Pi's micro SD card slot.
+
+Run the following command to clone the micro SD card:
+```
+sudo dd if=/dev/source_device_name of=/dev/destination_device_name bs=4M
+```
+Replace "source_device_name" with the device name of the source micro SD card (e.g., "/dev/mmcblk0" or "/dev/sdX") that you noted earlier.
+
+Replace "destination_device_name" with the device name of the destination micro SD card (e.g., "/dev/mmcblk0" or "/dev/sdX") that you identified when you inserted the destination card.
+
+Note: Be careful while specifying the destination device name because if you choose the wrong device, you can overwrite important data.
+
+The cloning process will take some time, depending on the size of the micro SD card and the speed of your Raspberry Pi. The progress won't be displayed on the screen, but you'll see the command prompt return once the process is complete.
+
+After the cloning process finishes, both the source and destination micro SD cards should be identical.
+
+Remember to double-check the device names before running the dd command to avoid accidentally overwriting data on the wrong device.
