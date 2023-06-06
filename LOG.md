@@ -371,3 +371,6 @@ The cloning process will take some time, depending on the size of the micro SD c
 After the cloning process finishes, both the source and destination micro SD cards should be identical.
 
 Remember to double-check the device names before running the dd command to avoid accidentally overwriting data on the wrong device.
+
+# 20230605
+- Add Machine Learning - Linear regression model into project
