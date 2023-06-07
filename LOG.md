@@ -374,3 +374,9 @@ Remember to double-check the device names before running the dd command to avoid
 
 # 20230605
 - Add Machine Learning - Linear regression model into project
+
+# 20230606
+- Fixing Machine Learning - Linear Regression Model
+
+# 20230607
+- Continue for Deep Learning code
