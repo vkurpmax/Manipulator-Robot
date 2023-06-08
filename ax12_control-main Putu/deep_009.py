@@ -23,7 +23,7 @@ import math
 # - - - - - - - SETUP - - - - - -
 # - - - - - - - - - - - - - - - -
 ## GPIO SETUP
-#START = Button(16)          # Using GPIO 16
+START = Button(16)          # Using GPIO 16
 
 ## DYNAMIXEL SETUP
 # e.g 'COM3' windows or '/dev/ttyUSB0' for Linux
@@ -38,13 +38,54 @@ Ax12.connect()
 my_dxl_1 = Ax12(1)
 my_dxl_2 = Ax12(2)
 my_dxl_3 = Ax12(3)
-my_dxl_1.set_moving_speed(50)
-my_dxl_2.set_moving_speed(50)
-my_dxl_3.set_moving_speed(50)
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(30)
+my_dxl_3.set_moving_speed(30)
+
+# - - - - - - - - - - - - - - - - 
+# - - - - - - DEFINE  - - - - - -
+# - - - - - - - - - - - - - - - -
+def SetAngle_4(angle):          
+    # Servo_4 Setup
+    servo_4 = 12            # Using GPIO 12
+    GPIO.setup(servo_4, GPIO.OUT)
+    pwm = GPIO.PWM(servo_4, 50)
+    pwm.start(0)
+    duty = angle / 18 + 2
+    GPIO.output(servo_4, True)
+    pwm.ChangeDutyCycle(duty)
+    time.sleep(1)
+    GPIO.output(servo_4, False)
+    pwm.ChangeDutyCycle(0)
+
+def SetAngle_5(angle):
+    # Servo_5 Setup
+    servo_5 = 13            # Using GPIO 13
+    GPIO.setup(servo_5, GPIO.OUT)
+    pwm = GPIO.PWM(servo_5, 50)
+    pwm.start(0)
+    duty = angle / 18 + 2
+    GPIO.output(servo_5, True)
+    pwm.ChangeDutyCycle(duty)
+    time.sleep(1)
+    GPIO.output(servo_5, False)
+    pwm.ChangeDutyCycle(0)
 
 my_dxl_1.set_goal_position(500)
-my_dxl_2.set_goal_position(225)
+my_dxl_2.set_goal_position(230)
 my_dxl_3.set_goal_position(325)
+
+val1 = int((511.5 - 0) * (180 - 0) / (1023 - 0) + 0)
+print("Val-1: %d" % (val1))         # Result: 90 before 74
+#SetAngle_4(val1)
+time.sleep(0.04)
+val2 = int((682 - 0) * (180 - 0) / (1023 - 0) + 0)
+print("Val-2: %d" % (val2))         # Result: 120 before 0
+#SetAngle_5(val2)
+time.sleep(0.015)
+
+SetAngle_4(80)
+SetAngle_5(180)
 
 def Formulasi():
     global L1, L2, L3
@@ -77,7 +118,7 @@ def Formulasi():
     T3a = theta3 * 180.0 / math.pi  # Degree    # T3a is theta3 in Degree
   
     T1 = 510 + (T1a / 0.29297)
-    T2 = 204 + (T2a / 0.29297)
+    T2 = 243 + (T2a / 0.29297)
     T3 = 460 + (T3a / 0.29297)
 
 import camcapture	# Running camcapture.py
@@ -161,41 +202,76 @@ Y = y_manipulator
 Z = 15
 
 # Position 2:
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(30)
+my_dxl_3.set_moving_speed(30)
 my_dxl_1.set_goal_position(500)
 my_dxl_2.set_goal_position(400)
 my_dxl_3.set_goal_position(325)
 time.sleep(2)
+#SetAngle_4(90)
+#SetAngle_5(180)
+time.sleep(1)
 
 Formulasi()
 
 
 # Position 3:
-my_dxl_1.set_moving_speed(40)
-my_dxl_2.set_moving_speed(40)
-my_dxl_3.set_moving_speed(40)
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(15)
+my_dxl_3.set_moving_speed(30)
 
-time.sleep(2)
 my_dxl_1.set_goal_position(int(T1))
 time.sleep(2)
 my_dxl_2.set_goal_position(int(T2))
-time.sleep(2)
+time.sleep(4)
 my_dxl_3.set_goal_position(int(T3))
 time.sleep(2)
 
+SetAngle_4(90)
+SetAngle_5(90)
+
 # Position 4:
-my_dxl_1.set_moving_speed(50)
-my_dxl_2.set_moving_speed(50)
-my_dxl_3.set_moving_speed(50)
+my_dxl_2.set_moving_speed(30)
+SetAngle_5(90)
+my_dxl_2.set_goal_position(400)
+SetAngle_5(90)
+
+# Position 4:
+my_dxl_1.set_moving_speed(30)
+SetAngle_5(90)
+my_dxl_2.set_moving_speed(15)
+SetAngle_5(90)
+my_dxl_3.set_moving_speed(30)
+SetAngle_5(90)
 my_dxl_1.set_goal_position(790)
-my_dxl_2.set_goal_position(230)
+SetAngle_5(90)
+my_dxl_2.set_goal_position(270)
+SetAngle_5(90)
 my_dxl_3.set_goal_position(325)
+SetAngle_5(90)
+time.sleep(3)
+SetAngle_4(90)
+SetAngle_5(180)
+time.sleep(1)
 
 # Position 5:
-my_dxl_1.set_goal_position(500)
-my_dxl_2.set_goal_position(225)
-my_dxl_3.set_goal_position(325)
+my_dxl_2.set_moving_speed(30)
+my_dxl_2.set_goal_position(400)
+time.sleep(2)
 
-k = cv2.waitKey(1)
+# Position 6:
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(10)
+my_dxl_3.set_moving_speed(30)
+my_dxl_1.set_goal_position(500)
+my_dxl_2.set_goal_position(280)
+my_dxl_3.set_goal_position(325)
+time.sleep(2)
+
+START.wait_for_press()
+print("Pressed")
+    
 print("\nEscape hit, closing the app")
     
 # SECTION 3: Disconnect Servo and Clean GPIO
@@ -204,3 +280,4 @@ my_dxl_2.set_torque_enable(0)
 my_dxl_3.set_torque_enable(0)
 Ax12.disconnect()
 GPIO.cleanup()
+cv2.destroyAllWindows()

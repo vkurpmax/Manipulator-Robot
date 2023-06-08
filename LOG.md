@@ -380,3 +380,9 @@ Remember to double-check the device names before running the dd command to avoid
 
 # 20230607
 - Continue for Deep Learning code
+
+# 20230608
+- There's problem with servo 5
+
+# 20230609
+- Analyzing Servo 5 Problem
