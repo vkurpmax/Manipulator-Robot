@@ -386,3 +386,7 @@ Remember to double-check the device names before running the dd command to avoid
 
 # 20230609
 - Analyzing Servo 5 Problem
+
+# 20230610
+- Successfully overcome servo 5 problems
+- There's problem with servo 3 gears
