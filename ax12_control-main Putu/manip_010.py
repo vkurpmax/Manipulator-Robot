@@ -8,40 +8,6 @@ import math
 
 # Declare Variables
 a = 0
-b = 0
-
-X = 0.0
-Y = 0.0
-Z = 0.0
-
-L1 = 0      # 2147483666
-L2 = 0
-L3 = 0
-
-h = 0.0
-theta1 = 0.0
-c3 = 0.0
-s3 = 0.0
-s3a = 0.0
-theta3 = 0.0
-p1 = 0.0
-p2 = 0.0
-theta2a = 0.0
-theta2 = 0.0
-
-T1a = 0.0
-T2a = 0.0
-T3a = 0.0
-
-T1 = 0.0
-T2 = 0.0
-T3 = 0.0
-
-keypressed = ''
-
-IptKoordinat_X = ''
-IptKoordinat_Y = ''
-IptKoordinat_Z = ''
 
 # - - - - - - - - - - - - - - - - 
 # - - - - - - - SETUP - - - - - -
@@ -62,9 +28,9 @@ Ax12.connect()
 my_dxl_1 = Ax12(1)
 my_dxl_2 = Ax12(2)
 my_dxl_3 = Ax12(3)
-my_dxl_1.set_moving_speed(60)
-my_dxl_2.set_moving_speed(60)
-my_dxl_3.set_moving_speed(60)
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(30)
+my_dxl_3.set_moving_speed(30)
 
 ## LCD SETUP
 lcd = CharLCD('PCF8574', 0x27)
@@ -115,8 +81,7 @@ def key():
 # - - - - - - DEFINE  - - - - - -
 # - - - - - - - - - - - - - - - -
 def SetAngle_4(angle):          
-    # Servo_4 Setup
-    servo_4 = 12            # Using GPIO 12
+    servo_4 = 13            # Using GPIO 13
     GPIO.setup(servo_4, GPIO.OUT)
     pwm = GPIO.PWM(servo_4, 50)
     pwm.start(0)
@@ -128,8 +93,7 @@ def SetAngle_4(angle):
     pwm.ChangeDutyCycle(0)
 
 def SetAngle_5(angle):
-    # Servo_5 Setup
-    servo_5 = 13            # Using GPIO 13
+    servo_5 = 12            # Using GPIO 12
     GPIO.setup(servo_5, GPIO.OUT)
     pwm = GPIO.PWM(servo_5, 50)
     pwm.start(0)
@@ -304,158 +268,127 @@ def InputKoordinat_Z():
         print(Z)
 
 def Formulasi():
-    global L1, L2, L3
-    global h, Z
-    global X, Y, theta1
-    global c3, s3, s3a, theta3
-    global theta2
-    global T1a, T2a, T3a
+    global X, Y, Z
     global T1, T2, T3
-
+    
     L1 = 85     # mm
     L2 = 165    # mm
     L3 = 155    # mm
-
+    
     # Formulasi Invers Kinematics Robot Manipulator
+
     theta1 = math.atan2(Y, X)    # Radian
 
-    h = Z - L1  # mm    # This is for theta3
+    h = Z - L1                   
     c3 = (X*X + Y*Y + h*h - L2*L2 - L3*L3) / (2*L2*L3)  # This is cos theta 3
-    s3 = -math.sqrt(1 - c3*c3)  # For down elbow
-    s3a = math.sqrt(1 - c3*c3)  # For up elbow
-    theta3 = math.atan2(s3, c3) # Radian
+    s3a = -math.sqrt(1 - c3*c3)     # For down elbow
+    s3b = math.sqrt(1 - c3*c3)      # For up elbow
+    theta3 = math.atan2(s3a, c3)    # Radian
 
-    alfa = math.atan2(h , math.sqrt(X*X + Y*Y))
-    beta = math.atan2(math.sin(math.acos(c3)) * L3, L2 + math.cos(math.acos(c3)) * 155)
+    alfa = math.atan2(math.sin(math.acos(c3)) * L3, L2 + math.cos(math.acos(c3)) * 155)
+    beta = math.atan2(h, math.sqrt(X*X + Y*Y))
     theta2 = alfa + beta
 
-    T1a = theta1 * 180.0 / math.pi  # Degree    # T1a is theta1 in Degree
-    T2a = theta2 * 180.0 / math.pi  # Degree    # T2a is theta2 in Degree
-    T3a = theta3 * 180.0 / math.pi  # Degree    # T3a is theta3 in Degree
+    T1a = theta1 * 180.0 / math.pi  # T1a is theta1 in Degree
+    T2a = theta2 * 180.0 / math.pi  # T2a is theta2 in Degree
+    T3a = theta3 * 180.0 / math.pi  # T3a is theta3 in Degree
   
-    T1 = 510 + (T1a / 0.29297)
-    T2 = 204 + (T2a / 0.29297)
-    T3 = 460 + (T3a / 0.29297)
-
-def gerakan_1():
-    global T1, T2, T3
-    global val1, val2
-
-    val1 = int((511.5 - 0) * (180 - 0) / (1023 - 0) + 0)    # Result: 90
-    SetAngle_4(val1)
-    time.sleep(0.04)
-
-    val2 = int((1023 - 0) * (180 - 0) / (1023 - 0) + 0)
-    SetAngle_5(val2)
-    time.sleep(1)
-
-    my_dxl_1.set_goal_position(int(T1))
-    time.sleep(2)
-    my_dxl_2.set_goal_position(int(T2))
-    time.sleep(2)
-    my_dxl_3.set_goal_position(int(T3))
-    time.sleep(2)
-
-    val2 = int((682 - 0) * (180 - 0) / (1023 - 0) + 0)
-    SetAngle_5(val2)
-    time.sleep(1)
-    
-    time.sleep(0.015)
-    b = 2
-
+    T1 = 510 + (T1a / 0.29297)  # Decimal Value
+    T2 = 243 + (T2a / 0.29297)  # Decimal Value
+    T3 = 460 + (T3a / 0.29297)  # Decimal Value
 
 
 # - - - - - - - - - - - - - - - - 
 # - - - -  MAIN PROGRAM   - - - -
 # - - - - - - - - - - - - - - - -
-# SECTION 1: Servo Initial Position
-START.wait_for_press()
-print("Pressed")
-my_dxl_2.set_goal_position(358)
-my_dxl_3.set_goal_position(409)
-my_dxl_1.set_goal_position(512)
+# Position 1:
+my_dxl_1.set_goal_position(500)
+my_dxl_2.set_goal_position(230)
+my_dxl_3.set_goal_position(325)
+SetAngle_4(80)
+SetAngle_5(180)
 
-val1 = int((511.5 - 0) * (180 - 0) / (1023 - 0) + 0)
-print("Val-1: %d" % (val1))         # Result: 90 before 74
-SetAngle_4(val1)
-time.sleep(0.04)
-val2 = int((682 - 0) * (180 - 0) / (1023 - 0) + 0)
-print("Val-2: %d" % (val2))         # Result: 120 before 0
-SetAngle_5(val2)
-time.sleep(0.015)
-b = 1
-
-START.wait_for_press()
-print("Pressed")
-
-
-# SECTION 2: Input Koordinat X
 InputKoordinat_X()
-print(X)
-print("Ipt Koordinat X: %s" % (IptKoordinat_X))
-
-# SECTION 3: Input Koordinat Y
 InputKoordinat_Y()
-print(Y)
-print("Ipt Koordinat Y: %s" % (IptKoordinat_Y))
-
-# SECTION 4: Input Koordinat Z
 InputKoordinat_Z()
-print(Z)
-print("Ipt Koordinat Z: %s" % (IptKoordinat_Z))
 
-START.wait_for_press()
-lcd.cursor_pos = (0, 0)
-lcd.write_string('INPUT X= ')
-lcd.cursor_pos = (0, 10)
-lcd.write_string(str(X))
-lcd.cursor_pos = (1, 0)
-lcd.write_string('INPUT Y= ')
-lcd.cursor_pos = (1, 10)
-lcd.write_string(str(Y))
-lcd.cursor_pos = (2, 0)
-lcd.write_string('INPUT Z= ')
-lcd.cursor_pos = (2, 10)
-lcd.write_string(str(Z))
-lcd.cursor_pos = (3, 0)
-lcd.write_string("START=INPUTAN KEDUA")
-time.sleep(2)
+# Position 2:
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(30)
+my_dxl_3.set_moving_speed(30)
+my_dxl_1.set_goal_position(500)
+my_dxl_2.set_goal_position(400)
+my_dxl_3.set_goal_position(325)
+time.sleep(3)
+
 Formulasi()
 
-print(" ")
-print(type(X))
-print(type(Y))
-print("X : %d" % (X))
-print("Y : %d" % (Y))
-print("theta1 : %d" % (math.degrees(theta1)))
-print(type(theta1))
+# Position 3:
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(15)
+my_dxl_3.set_moving_speed(30)
 
-print(" ")
-print("h : %d" % (h))
-print("c3 : %d" % (math.degrees(c3)))
-print("s3 : %d" % (math.degrees(s3)))
-print("s3a : %d" % (math.degrees(s3a)))
-print("theta3 : %d" % (math.degrees(theta3)))
-print(" ")
-print("p1 : %d" % (p1))
-print("p2 : %d" % (p2))
-print("theta2a : %d" % (math.degrees(theta2a)))
-print("theta2 : %d" % (math.degrees(theta2)))
-print(" ")
-print("T1a : %d" % (T1a))
-print("T2a : %d" % (T2a))
-print("T3a : %d" % (T3a))
-print(" ")
+my_dxl_1.set_goal_position(int(T1))
+time.sleep(2)
+my_dxl_2.set_goal_position(int(T2))
+time.sleep(4)
+my_dxl_3.set_goal_position(int(T3))
+time.sleep(2)
+
+
+SetAngle_4(80)
+SetAngle_5(140)
+
+print("\nDynamixel 1 Present Position: %d" % (my_dxl_1.get_present_position()))
+print("Dynamixel 2 Present Position: %d" % (my_dxl_2.get_present_position()))
+print("Dynamixel 3 Present Position: %d" % (my_dxl_3.get_present_position()))
+print("")
+
+# Position 4:
+my_dxl_2.set_moving_speed(30)
+my_dxl_2.set_goal_position(400)
+time.sleep(3)
+
+# Position 5:
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(15)
+my_dxl_3.set_moving_speed(30)
+my_dxl_1.set_goal_position(790)
+my_dxl_2.set_goal_position(270)
+my_dxl_3.set_goal_position(325)
+#SetAngle_5(150)
+time.sleep(3)
+
+SetAngle_4(90)
+SetAngle_5(180)
+
+# Position 6:
+my_dxl_2.set_moving_speed(30)
+my_dxl_2.set_goal_position(400)
+time.sleep(2)
+
+# Position 7:
+my_dxl_1.set_moving_speed(30)
+my_dxl_2.set_moving_speed(10)
+my_dxl_3.set_moving_speed(30)
+my_dxl_1.set_goal_position(500)
+my_dxl_2.set_goal_position(280)
+my_dxl_3.set_goal_position(325)
+time.sleep(6)
+
+    
+print("\nClosing Manipulator Program")
+print("")
+
 print("T1 : %d" % (T1))
 print("T2 : %d" % (T2))
 print("T3 : %d" % (T3))
 
-START.wait_for_press()
-gerakan_1()
-time.sleep(2)
-
-START.wait_for_press()
 print('Selesai')
+
+lcd.clear()
+lcd.cursor_pos = (1, 0)
+lcd.write_string('SELESAI')
 
 # SECTION 3: Disconnect Servo and Clean GPIO
 my_dxl_1.set_torque_enable(0)
